@@ -1,11 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-
+const dotenv = require('dotenv').config();
 const app = express();
 
 const corsOptions = {
     origin: 'http://localhost:8081',
 };
+
 
 app.use(cors(corsOptions));
 
@@ -17,10 +18,10 @@ app.use(express.urlencoded({ extended: true })); /* bodyParser.urlencoded() is d
 
 // simple route
 app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to bezkoder application.' });
+    res.json({ message: 'Test' });
 });
 
-require('./app/routes/tutorial.routes.js')(app);
+// require('./app/routes/tutorial.routes.js')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
