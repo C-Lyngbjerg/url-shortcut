@@ -1,4 +1,4 @@
-const con = require('./connection')
+const con = require('./db/connection')
 
 exports.shorten = async (longURL) => {
     await con.connection.query()
